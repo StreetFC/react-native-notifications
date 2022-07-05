@@ -47,7 +47,10 @@ public class ReactAppLifecycleFacade implements AppLifecycleFacade {
             return false;
         }
 
-        return mReactContext.hasActiveReactInstance();
+        // Temporary fix until we upgrade React Native ... which is overdue.
+        // https://github.com/wix/react-native-notifications/issues/867#issuecomment-1140490176
+        // return mReactContext.hasActiveReactInstance();
+        return mReactContext.hasActiveCatalystInstance();
     }
 
     @Override
